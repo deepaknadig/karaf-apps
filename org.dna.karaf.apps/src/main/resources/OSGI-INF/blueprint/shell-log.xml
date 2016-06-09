@@ -6,7 +6,12 @@
     <command-bundle xmlns="http://karaf.apache.org/xmlns/shell/v1.1.0">
         <command>
             <action class="org.dna.karaf.cli">
+                <completers>
+                    <ref component-id="ourCommandCompleter" />
+                    <null />
+                </completers>
             </action>
         </command>
     </command-bundle>
+    <bean id="ourCommandCompleter" class="com.your.organization.CommandCompleter" />
 </blueprint>
